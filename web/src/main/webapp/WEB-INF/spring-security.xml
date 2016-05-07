@@ -40,10 +40,15 @@
                 password-parameter="password"
                 always-use-default-target="true"/>
 
-        <logout logout-url="/logout.html" logout-success-url="/logoutSuccessful"
-                delete-cookies="JSESSIONID" invalidate-session="true" />
+        <!--********Start Logout Handler configuration-->
+        <logout logout-url="/perform_logout"
+                delete-cookies="JSESSIONID"
+                invalidate-session="false"
+                success-handler-ref="myLogoutSuccessHandler" />
 
-        <!--<logout logout-success-url="/login.html?logout" />-->
+
+
+        <!--********End Logout Handler configuration-->
 
 
         <!-- access denied page -->
@@ -91,7 +96,11 @@
         <beans:constructor-arg value="QAZWSXEDCRFVTGBYHNUJMIKOLP1234567890" />
         <beans:constructor-arg ref="myUserDetailService" />
         <beans:constructor-arg ref="persistentLoginRepository" />
-        <beans:property name="tokenValiditySeconds" value="864000" />
+        <beans:property name="tokenValiditySeconds" value="846000" /> <!--alive 10 days -->
+    </beans:bean>
+
+    <beans:bean id="myLogoutSuccessHandler" class="com.spring.web.mvc.security.MyLogoutSuccessHandler" >
+        <beans:property name="defaultTargetUrl" value="/login.html?logout=true" />
     </beans:bean>
 
         <!--Override prefix 'ROLE_' for Spring Security 4.x-->

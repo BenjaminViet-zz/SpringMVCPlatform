@@ -46,11 +46,13 @@ public class RememberMeTokenDAO {
 
     public void removeUserTokens(final String username) {
 
-        PersistentLoginEntity token =
-                (PersistentLoginEntity) sessionFactory.getCurrentSession().createCriteria(PersistentLoginEntity.class)
-                        .add(Restrictions.eq("username", username)).uniqueResult();
-        if (token != null) {
-            sessionFactory.getCurrentSession().delete(token);
+        List<PersistentLoginEntity> tokenList =
+                (List<PersistentLoginEntity>) sessionFactory.getCurrentSession().createCriteria(PersistentLoginEntity.class)
+                        .add(Restrictions.eq("userName", username)).list();
+        if (tokenList != null) {
+            for(PersistentLoginEntity tokenEntity : tokenList){
+                sessionFactory.getCurrentSession().delete(tokenEntity);
+            }
         }
     }
 }
