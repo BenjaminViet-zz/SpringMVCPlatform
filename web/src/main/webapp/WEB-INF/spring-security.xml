@@ -34,8 +34,9 @@
                 login-page='/login.html'
                 login-processing-url="/perform_login"
                 default-target-url="/home.html"
-                authentication-failure-url="/login.html?error=true"
 
+                authentication-failure-url="/login.html?error=true"
+                authentication-failure-handler-ref="myAuthenticationFailureHandler"
                 username-parameter="username"
                 password-parameter="password"
                 always-use-default-target="true"/>
@@ -86,8 +87,13 @@
         <beans:property name="filterProcessesUrl" value="/perform_login"></beans:property>
         <beans:property name="authenticationManager" ref="authenticationManager"></beans:property>
         <beans:property name="authenticationSuccessHandler" ref="myAuthenticationSuccessHandler"></beans:property>
-        <!--<beans:property name="authenticationFailureHandler" ref="myAuthenticationFailureHandler"></beans:property>-->
+        <beans:property name="authenticationFailureHandler" ref="myAuthenticationFailureHandler"></beans:property>
         <beans:property name="rememberMeServices" ref="rememberMeServices"/>
+    </beans:bean>
+
+    <beans:bean id="myAuthenticationFailureHandler" class="com.spring.web.mvc.security.MyAuthenticationFailureHandler">
+        <beans:property name="defaultFailureUrl" value="/login.html?error=1"/>
+        <!--<beans:property name="allowSessionCreation" value="false"/>-->
     </beans:bean>
 
     <!-- Persistent Remember Me Service -->

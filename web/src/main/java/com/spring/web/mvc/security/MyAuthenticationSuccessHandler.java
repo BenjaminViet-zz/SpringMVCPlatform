@@ -30,8 +30,6 @@ public class MyAuthenticationSuccessHandler extends SimpleUrlAuthenticationSucce
 
     Logger logger = Logger.getLogger(MyAuthenticationSuccessHandler.class);
 
-
-
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
     public void setRedirectStrategy(RedirectStrategy redirectStrategy) {
