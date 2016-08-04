@@ -21,6 +21,7 @@ public class UserDTO implements Serializable{
     private UserGroupDTO userGroup;
     private Timestamp createdDate;
     private Integer isActive;
+    private String captcha;
 
     public Long getUserId() {
         return userId;
@@ -76,5 +77,13 @@ public class UserDTO implements Serializable{
 
     public void setActive(Integer active) {
         isActive = active;
+    }
+
+    public String getCaptcha() {
+        return captcha;
+    }
+
+    public void setCaptcha(String captcha) {
+        this.captcha = captcha;
     }
 }
