@@ -37,15 +37,8 @@
                             <img id="captcha_id" name="imgCaptcha" src="captcha.jpg">
                         </div>
                     </div>
-                    <%--<div class="input-group input-sm">--%>
-                        <%--<a href="javascript:;"--%>
-                           <%--title="change captcha text"--%>
-                           <%--onclick="document.getElementById('captcha_id').src = 'captcha.jpg?' + Math.random();  return false">--%>
-                            <%--<img src="<c:url value="/sc-content/images/refresh.png"/>" />--%>
-                        <%--</a>--%>
-                    <%--</div>--%>
                     <div class="input-group input-sm">
-                        <input type="text" class="form-control" name="captcha" />
+                        <input type="text" class="form-control input-border" name="captcha_response" placeholder="Your captcha response" required />
                     </div>
                     <div class="input-group input-sm">
                         <div class="checkbox">

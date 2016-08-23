@@ -4,12 +4,11 @@ import com.spring.util.Constants;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
-import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +40,14 @@ public class AuthenticationProcessingFilterExtends extends AbstractAuthenticatio
 
         String username = obtainUsername(request);
         String password = obtainPassword(request);
+        String captchaResponse = obtainCaptcha(request);
+        String captchaChallenge = request.getSession().getAttribute(Constants.CAPTCHA_CHALLENGE_KEY).toString();
+
+        if(!captchaChallenge.equals(captchaResponse)){
+            logger.error("Not match captcha response key");
+            throw new BadCredentialsException("Not match captcha key");
+        }
+
         if (username == null) {
             username = "";
         }
@@ -54,9 +61,8 @@ public class AuthenticationProcessingFilterExtends extends AbstractAuthenticatio
         UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
 
         // Place the last username attempted into HttpSession for views
-        request.getSession().setAttribute(Constants.ACEGI_SECURITY_LAST_USERNAME_KEY, username);
-        String j_username = request.getParameter(Constants.ACEGI_SECURITY_FORM_USERNAME_KEY);
-        request.getSession().setAttribute(Constants.ACEGI_SECURITY_FORM_USERNAME_KEY, j_username);
+        String j_username = request.getParameter(Constants.SPRING_SECURITY_FORM_USERNAME_KEY);
+        request.getSession().setAttribute(Constants.SPRING_SECURITY_FORM_USERNAME_KEY, j_username);
         String lang = null;
 //        lang = request.getParameter(this.languageParam);
 //
@@ -69,6 +75,10 @@ public class AuthenticationProcessingFilterExtends extends AbstractAuthenticatio
         // Allow subclasses to set the "details" property
         setDetails(request, authRequest);
         return this.getAuthenticationManager().authenticate(authRequest);
+    }
+
+    private String obtainCaptcha(HttpServletRequest request) {
+        return request.getParameter(Constants.CAPTCHA_RESPONSE_KEY);
     }
 
     /**
@@ -90,7 +100,7 @@ public class AuthenticationProcessingFilterExtends extends AbstractAuthenticatio
      *         <code>AuthenticationManager</code>
      */
     protected String obtainPassword(HttpServletRequest request) {
-        return request.getParameter(Constants.ACEGI_SECURITY_FORM_PASSWORD_KEY);
+        return request.getParameter(Constants.SPRING_SECURITY_FORM_PASSWORD_KEY);
     }
 
     /**
@@ -105,7 +115,7 @@ public class AuthenticationProcessingFilterExtends extends AbstractAuthenticatio
      *         <code>AuthenticationManager</code>
      */
     protected String obtainUsername(HttpServletRequest request) {
-        return StringUtils.trim(request.getParameter(Constants.ACEGI_SECURITY_FORM_USERNAME_KEY));
+        return StringUtils.trim(request.getParameter(Constants.SPRING_SECURITY_FORM_USERNAME_KEY));
     }
 
     /**

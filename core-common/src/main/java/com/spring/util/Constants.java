@@ -33,9 +33,10 @@ public class Constants {
      * Acegi security constants
      */
 
-    public static final String ACEGI_SECURITY_FORM_USERNAME_KEY = "username";
-    public static final String ACEGI_SECURITY_FORM_PASSWORD_KEY = "password";
-    public static final String ACEGI_SECURITY_LAST_USERNAME_KEY = "ACEGI_SECURITY_LAST_USERNAME";
+    public static final String SPRING_SECURITY_FORM_USERNAME_KEY = "username";
+    public static final String SPRING_SECURITY_FORM_PASSWORD_KEY = "password";
+    public static final String CAPTCHA_RESPONSE_KEY = "captcha_response";
+    public static final String CAPTCHA_CHALLENGE_KEY = "captcha_challenge";
 
     /**
      * CRUD commands

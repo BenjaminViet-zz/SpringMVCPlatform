@@ -1,5 +1,6 @@
 package com.spring.web.mvc.captcha;
 
+import com.spring.util.Constants;
 import com.spring.web.util.CaptchaUtils;
 
 import javax.imageio.ImageIO;
@@ -18,11 +19,6 @@ import java.io.OutputStream;
  */
 public class CaptchaGenServlet extends HttpServlet{
     public static final String FILE_TYPE = "jpeg";
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        genCaptcha(request, response);
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,7 +53,7 @@ public class CaptchaGenServlet extends HttpServlet{
             g.drawString(captchaStr, 10, 25);
 
             HttpSession session = request.getSession(true);
-            session.setAttribute("CAPTCHA", captchaStr);
+            session.setAttribute(Constants.CAPTCHA_CHALLENGE_KEY, captchaStr);
 
             OutputStream outputStream = response.getOutputStream();
 
