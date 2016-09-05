@@ -51,9 +51,4 @@ public class HomeController {
         model.addAttribute("user", SpringUtils.getPrincipal());
         return "accessDenied";
     }
-
-    @RequestMapping(value = "/login.html", method = RequestMethod.GET)
-    public String loginPage() {
-        return "login";
-    }
 }

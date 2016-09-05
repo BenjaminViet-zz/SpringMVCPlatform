@@ -31,11 +31,11 @@
         <!--<intercept-url pattern="/sc-content/**" access="permitAll"/>-->
 
         <form-login
-                login-page='/login.html'
+                login-page='/login.jsp'
                 login-processing-url="/perform_login"
                 default-target-url="/home.html"
 
-                authentication-failure-url="/login.html?error=true"
+                authentication-failure-url="/login.jsp?error=true"
                 authentication-failure-handler-ref="myAuthenticationFailureHandler"
                 username-parameter="username"
                 password-parameter="password"
@@ -92,7 +92,7 @@
     </beans:bean>
 
     <beans:bean id="myAuthenticationFailureHandler" class="com.spring.web.mvc.security.MyAuthenticationFailureHandler">
-        <beans:property name="defaultFailureUrl" value="/login.html?error=1"/>
+        <beans:property name="defaultFailureUrl" value="/login.jsp?error=1"/>
         <!--<beans:property name="allowSessionCreation" value="false"/>-->
     </beans:bean>
 
@@ -106,7 +106,7 @@
     </beans:bean>
 
     <beans:bean id="myLogoutSuccessHandler" class="com.spring.web.mvc.security.MyLogoutSuccessHandler" >
-        <beans:property name="defaultTargetUrl" value="/login.html?logout=true" />
+        <beans:property name="defaultTargetUrl" value="/login.jsp?logout=true" />
     </beans:bean>
 
         <!--Override prefix 'ROLE_' for Spring Security 4.x-->

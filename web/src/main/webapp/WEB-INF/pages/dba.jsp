@@ -1,12 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8" %>
+<%@ include file="/common/taglibs.jsp"%>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>DBA page</title>
 </head>
+<c:url var="logoutUrl" value="/perform_logout" />
 <body>
-Dear <strong>${user}</strong>, Welcome to DBA Page.
-<a href="<c:url value="/logout.html" />">Logout</a>
+    <form:form action="${logoutUrl}" method="POST">
+        Dear <strong>${user}</strong>, Welcome to DBA Page.
+        <button type="submit">Logout</button>
+    </form:form>
 </body>
 </html>
