@@ -14,9 +14,12 @@
         <div class="login-card">
             <div class="login-form">
                 <form action="/perform_login" method="post" class="form-horizontal">
+                    <c:if test="${param.captcha != null}">
+
+                    </c:if>
                     <c:if test="${param.error != null}">
                         <div class="alert alert-danger">
-                            <p>Invalid username and password.</p>
+                            <p>Invalid username and password. ${param.error}</p>
                         </div>
                     </c:if>
                     <c:if test="${param.logout != null}">
