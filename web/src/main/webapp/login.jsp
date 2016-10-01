@@ -19,7 +19,7 @@
                     </c:if>
                     <c:if test="${param.error != null}">
                         <div class="alert alert-danger">
-                            <p>Invalid username and password. ${param.error}</p>
+                            <p>Invalid username and password.</p>
                         </div>
                     </c:if>
                     <c:if test="${param.logout != null}">
