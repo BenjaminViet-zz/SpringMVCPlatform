@@ -1,8 +1,8 @@
-<decorators defaultdir="/decorator">
-    <decorator name="default" page="default.jsp">
+<decorators defaultdir="/decorators">
+    <decorator name="default" page="default/dc_default.jsp">
         <pattern>/*</pattern>
     </decorator>
-    <decorator name="login" page="login.jsp">
+    <decorator name="login" page="dc_login.jsp">
         <pattern>/login*</pattern>
     </decorator>
 </decorators>

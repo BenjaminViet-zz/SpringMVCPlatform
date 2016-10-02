@@ -31,7 +31,7 @@ public class HomeController {
     @RequestMapping(value = {"/", "/home.html", "/welcome.html"})
     public String homePage(ModelMap model) {
         model.addAttribute("greeting", "Hi, Welcome to mysite");
-        return "welcome";
+        return "home";
     }
 
     @RequestMapping(value = "/admin.html", method = RequestMethod.GET)
