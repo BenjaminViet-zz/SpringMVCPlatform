@@ -1,0 +1,15 @@
+{
+    "name": "SpringMVCPlatform",
+    "version": "1.0.0",
+    "description": "A sample platform to run Web Application based on Spring Framework",
+    "license": "MIT",
+    "repository": "",
+    "private": true,
+    "author": "bluckviet@gmail.com",
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-less": "^1.4.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "load-grunt-tasks": "^3.5.2"
+    }
+}

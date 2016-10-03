@@ -7,8 +7,14 @@
     <title><decorator:title default="SiteMesh Integration"/></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
-
-    <link rel="stylesheet" type="text/css" href="<c:url value="/themes/white-black/clientstyle/default.style.css" />" />
+    <c:choose>
+        <c:when test="${instanceType == null || (instanceType != null && instanceType == 'DEV')}">
+            <link rel="stylesheet" type="text/css" href="<c:url value="/themes/white-black/clientstyle/css/dev/style.css" />" />
+        </c:when>
+        <c:otherwise>
+            <link rel="stylesheet" type="text/css" href="<c:url value="/themes/white-black/clientstyle/css/pro/style.min.css" />" />
+        </c:otherwise>
+    </c:choose>
 </head>
 
 <decorator:head/>
