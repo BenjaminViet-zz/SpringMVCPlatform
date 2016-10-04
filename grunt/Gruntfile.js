@@ -19,7 +19,6 @@ module.exports = function(grunt) {
             production: {
                 options: {
                     paths: ["../web/src/main/webapp/themes"],
-//                    cleancss: true,
                     compress: true
                 },
                 files: {"../web/src/main/webapp/themes/white-black/clientstyle/css/pro/style.min.css": "../web/src/main/webapp/themes/white-black/clientstyle/less/*.less"}
