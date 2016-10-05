@@ -1,0 +1,70 @@
+/*
+    -------------------------------------------------------------------------------
+    [Table of contents]
+
+    1.  Colour Palette
+    2.  Main Style
+    3.  Typography Components
+        3.1   Heading Style
+        3.2   Link Style
+    4.  Form Elements Style
+    -------------------------------------------------------------------------------
+*/
+
+/*
+    -------------------------------------------------------------------------------
+    1.  Colour Palette
+    -------------------------------------------------------------------------------
+*/
+@bg_login_color:    #2F2F2F;
+
+/*
+    -------------------------------------------------------------------------------
+    2.  Main Style
+    -------------------------------------------------------------------------------
+*/
+
+html {
+  background-color: @bg_login_color;
+}
+
+body, #mainWrapper {
+  height: 100%;
+  background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    right top,
+    color-stop(0, #EDEDED),
+    color-stop(0.08, #EAEAEA),
+    color-stop(1, #2F2F2F),
+    color-stop(1, #AAAAAA)
+  );
+  background-image: -o-linear-gradient(top, #EDEDED 0%, #EAEAEA 8%, #2F2F2F 100%, #AAAAAA 100%);
+  background-image: -moz-linear-gradient(top, #EDEDED 0%, #EAEAEA 8%, #2F2F2F 100%, #AAAAAA 100%);
+  background-image: -webkit-linear-gradient(top, #EDEDED 0%, #EAEAEA 8%, #2F2F2F 100%, #AAAAAA 100%);
+  background-image: -ms-linear-gradient(top, #EDEDED 0%, #EAEAEA 8%, #2F2F2F 100%, #AAAAAA 100%);
+  background-image: linear-gradient(to top, #EDEDED 0%, #EAEAEA 8%, #2F2F2F 100%, #AAAAAA 100%);
+}
+
+#mainWrapper {
+  /*height: 720px; Without explicit px values, % in children's does not work*/
+  height: 100vh; /*with Viewport-Percentage, we can handles all devices screens  */
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.form-control{
+  font-size: 12px!important;
+}
+
+/*
+  -------------------------------------------------------------------------------
+    3.  Typography Components
+        3.1 Heading Style
+  -------------------------------------------------------------------------------
+*/
+
+/*
+    4.  Form Elements Style
+*/

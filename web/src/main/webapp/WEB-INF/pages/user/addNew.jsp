@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Add New User</title>
-    <link href="/sc-content/css/bootstrap_v1.0.css" type="text/css" rel="stylesheet" />
+    <link href="/themes/boostrap/customstyle/css/bootstrap.css" type="text/css" rel="stylesheet" />
     <link href="/sc-content/css/style_v1.0.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
 </head>

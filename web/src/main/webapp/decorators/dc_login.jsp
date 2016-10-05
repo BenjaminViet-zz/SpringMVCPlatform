@@ -2,16 +2,18 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title><decorator:title default="SiteMesh Integration"/></title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <decorator:head/>
-</head>
-<body>
+    <head>
+        <title><decorator:title default="Login Page"/></title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
-<div id="content">
-    <decorator:body/>
-</div>
+    </head>
+    <decorator:head />
 
-</body>
+    <body>
+
+        <div id="content">
+            <decorator:body/>
+        </div>
+
+    </body>
 </html>

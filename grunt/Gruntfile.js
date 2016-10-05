@@ -14,14 +14,20 @@ module.exports = function(grunt) {
                 options: {
                     paths: ["../web/src/main/webapp/themes"]
                 },
-                files: {"../web/src/main/webapp/themes/white-black/clientstyle/css/dev/style.css": "../web/src/main/webapp/themes/white-black/clientstyle/less/*.less"}
+                files: {
+                    "../web/src/main/webapp/sc-content/css/dev/clientstyle.css": "../web/src/main/webapp/themes/client/white-black/less/clientstyle.less",
+                    "../web/src/main/webapp/sc-content/css/dev/adminstyle.css": "../web/src/main/webapp/themes/admin/less/adminstyle.less"
+                }
             },
             production: {
                 options: {
                     paths: ["../web/src/main/webapp/themes"],
                     compress: true
                 },
-                files: {"../web/src/main/webapp/themes/white-black/clientstyle/css/pro/style.min.css": "../web/src/main/webapp/themes/white-black/clientstyle/less/*.less"}
+                files: {
+                    "../web/src/main/webapp/sc-content/css/pro/clientstyle.min.css": "../web/src/main/webapp/themes/client/white-black/less/clientstyle.less",
+                    "../web/src/main/webapp/sc-content/css/pro/adminstyle.min.css": "../web/src/main/webapp/themes/admin/less/adminstyle.less"
+                }
             }
         },
 
@@ -31,7 +37,7 @@ module.exports = function(grunt) {
         watch: {
             less: {
                 files: [
-                    '../web/src/main/webapp/themes/white-black/clientstyle/less/*.less' // <== Write here the files that Grunt must watches
+                    '../web/src/main/webapp/themes/**/*.less' // <== Write here the files that Grunt must watches
                 ],
                 tasks: ['less']
             }
