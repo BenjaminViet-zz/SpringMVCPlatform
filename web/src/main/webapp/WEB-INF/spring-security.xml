@@ -13,8 +13,13 @@
 
     <http auto-config="true" use-expressions="false" access-decision-manager-ref="accessDecisionManager">
         <!-- Restrict URLs based on role -->
-        <intercept-url pattern="/login**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <intercept-url pattern="/resources/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+        <intercept-url pattern="/login.html" access="LOGON" />
+        <intercept-url pattern="/login.htm" access="LOGON" />
+        <intercept-url pattern="/login" access="LOGON" />
         <intercept-url pattern="/admin/**" access="ADMIN" />
+        <intercept-url pattern="/dba/**" access="DBA" />
 
         <!-- Fix problem redirecting to "/favicon.ico" -->
         <intercept-url pattern="/favicon.ico" access="permitAll"/>

@@ -3,17 +3,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><decorator:title default="Login Page"/></title>
+        <title><decorator:title default="Admin Page"/></title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
     </head>
     <decorator:head />
 
     <body>
-
         <div id="content">
             <decorator:body/>
         </div>
-
     </body>
 </html>

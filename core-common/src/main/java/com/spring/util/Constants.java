@@ -16,8 +16,8 @@ public class Constants {
 
     // Default target suffix url
     public static final String DEFAULT_TARGET_URL = "/welcome.html";
-    public static final String DEFAULT_ADMIN_TARGET_URL = "/admin.html";
-    public static final String DEFAULT_DBA_TARGET_URL = "/dba.html";
+    public static final String DEFAULT_ADMIN_TARGET_URL = "/admin/dashboard.html";
+    public static final String DEFAULT_DBA_TARGET_URL = "/dba/dashboard.html";
 
     /**
      * The request scope attribute that holds the list form
