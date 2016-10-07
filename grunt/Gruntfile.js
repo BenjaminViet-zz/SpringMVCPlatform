@@ -48,6 +48,6 @@ module.exports = function(grunt) {
     /*
      * Registered tasks
      */
-    grunt.registerTask('default', ['less']);
+    grunt.registerTask('default', ['less:development']);
 
 };
