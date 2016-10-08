@@ -13,10 +13,10 @@
 
         <c:choose>
             <c:when test="${instanceType == null || (instanceType != null && instanceType == 'DEV')}">
-                <link rel="stylesheet" type="text/css" href="<c:url value="/sc-content/css/dev/adminstyle.css" />" />
+                <link rel="stylesheet" type="text/css" href="<c:url value="/dist/dev/css/adminstyle.css" />" />
             </c:when>
             <c:otherwise>
-                <link rel="stylesheet" type="text/css" href="<c:url value="/sc-content/css/pro/adminstyle.min.css" />" />
+                <link rel="stylesheet" type="text/css" href="<c:url value="/dist/pro/css/adminstyle.min.css" />" />
             </c:otherwise>
         </c:choose>
 

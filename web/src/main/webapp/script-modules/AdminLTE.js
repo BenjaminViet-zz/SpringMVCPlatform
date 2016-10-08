@@ -17,7 +17,7 @@ $.AdminLTE = {};
 $.AdminLTE.options = {
     //Add slimscroll to navbar menus
     //This requires you to load the slimscroll plugin
-    //in every page before app.js
+    //in every page before adminJS.js
     navbarMenuSlimscroll: true,
     navbarMenuSlimscrollWidth: "3px", //The width of the scroll bar
     navbarMenuHeight: "200px", //The height of the inner menu
@@ -43,7 +43,7 @@ $.AdminLTE.options = {
     //Enable Fast Click. Fastclick.js creates a more
     //native touch experience with touch devices. If you
     //choose to enable the plugin, make sure you load the script
-    //before AdminLTE's app.js
+    //before AdminLTE's adminJS.js
     enableFastclick: false,
     //Control Sidebar Options
     enableControlSidebar: true,
@@ -663,7 +663,7 @@ function _init() {
  * EXPLICIT BOX CONTROLS
  * -----------------------
  * This is a custom plugin to use with the component BOX. It allows you to activate
- * a box inserted in the DOM after the app.js was loaded, toggle and remove box.
+ * a box inserted in the DOM after the adminJS.js was loaded, toggle and remove box.
  *
  * @type plugin
  * @usage $("#box-widget").activateBox();

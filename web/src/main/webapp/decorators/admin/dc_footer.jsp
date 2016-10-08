@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<script src="<c:url value="/sc-content/plugins/jquery/jquery-2.2.3.min.js" />"></script>
+<script src="<c:url value="/resources/plugins/jquery/jquery-2.2.3.min.js" />"></script>
 
 <script type="text/javascript">
     // if jQuery has not been loaded, load from google cdn
@@ -15,10 +15,9 @@
 
 <c:choose>
     <c:when test="${instanceType == null || (instanceType != null && instanceType == 'DEV')}">
-        <script src="<c:url value="/sc-content/js/AdminLTE.js" />"></script>
-        <script src="<c:url value="/sc-content/js/app.js" />"></script>
+        <script src="<c:url value="/dist/dev/js/adminJS.js" />"></script>
     </c:when>
     <c:otherwise>
-        <%--<script src="<c:url value="/sc-content/js/app.min.js" />"></script>--%>
+        <script src="<c:url value="/dist/pro/js/adminJS.min.js" />"></script>
     </c:otherwise>
 </c:choose>
