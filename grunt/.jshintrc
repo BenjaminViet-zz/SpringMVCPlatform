@@ -1,0 +1,27 @@
+{
+  "bitwise": true,
+  "camelcase": false,
+  "curly": true,
+  "eqeqeq": false,
+  "immed": false,
+  "indent": 4,
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "undef": false,
+  "unused": true,
+  "nonew": true,
+  "devel": true,
+  "forin": true,
+  "trailing": true,
+  "laxbreak": true,
+  "laxcomma": true,
+  "strict": true,
+  "node": true, // put jshint into "Node mode", and remove errors: Use the function form of "use strict" and "'module' is not defined"
+  "globals": {
+    "jQuery": false,
+    "$": false,
+    "window": false,
+    "document": false
+  }
+}

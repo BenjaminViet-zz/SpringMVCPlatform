@@ -56,6 +56,15 @@ module.exports = function(grunt) {
                 src: ["../web/src/main/webapp/script-modules/AdminLTE.js","../web/src/main/webapp/script-modules/adminJS.js"],
                 dest: "../web/src/main/webapp/dist/dev/js/adminJS.js"
             }
+        },
+        jshint: {
+            options: {
+                jshintrc: ".jshintrc",
+                ignores: ".jshintignore"
+            },
+            files: {
+                src: ['../web/src/main/webapp/script-modules/**/*.js','../web/src/main/webapp/script-modules/*.js']
+            }
         }
     });
 
@@ -63,7 +72,7 @@ module.exports = function(grunt) {
     /*
      * Registered tasks
      */
-    grunt.registerTask('default', ['less:dev', 'concat:dev']);
+    grunt.registerTask('default', ['less:dev', 'concat:dev', 'jshint']);
     grunt.registerTask('pro', ['less:pro']);
 
 };

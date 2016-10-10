@@ -251,8 +251,9 @@ function _init() {
                 //Fix for the control sidebar height
                 var controlSidebar = $($.AdminLTE.options.controlSidebarOptions.selector);
                 if (typeof controlSidebar !== "undefined") {
-                    if (controlSidebar.height() > postSetWidth)
+                    if (controlSidebar.height() > postSetWidth) {
                         $(".content-wrapper, .right-side").css('min-height', controlSidebar.height());
+                    }
                 }
 
             }
